@@ -11,7 +11,7 @@ import (
 // GetLists returns the list data from the Aweber lists API
 func (a *Aweber) GetLists() *Lists {
 	client := a.Client
-	lists := fmt.Sprintf("%slists", a.baseURL)
+	lists := fmt.Sprintf("%s/lists", a.baseURL)
 
 	resp, err := client.Get(lists)
 	if err != nil {

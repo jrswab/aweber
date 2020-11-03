@@ -1,5 +1,19 @@
 package aweber
 
+type SubscriberData struct {
+	AdTracking                    string       `json:"ad_tracking"`
+	CustomFields                  CustomFields `json:"custom_fields"`
+	Email                         string       `json:"email"`
+	IPAddress                     string       `json:"ip_address"`
+	LastFollowupMessageNumberSent int          `json:"last_followup_message_number_sent"`
+	MiscNotes                     string       `json:"misc_notes"`
+	Name                          string       `json:"name"`
+	StrictCustomFields            string       `json:"strict_custom_fields"`
+	Tags                          []string     `json:"tags"`
+}
+
+type CustomFields interface{}
+
 type List struct {
 	CampaignsCollectionLink             string `json:"campaigns_collection_link"`
 	CustomFieldsCollectionLink          string `json:"custom_fields_collection_link"`

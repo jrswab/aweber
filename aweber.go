@@ -23,7 +23,7 @@ type Aweber struct {
 // NewAweber creates and returns a new Aweber struct used for calls to the Aweber API
 func NewAweber(accountID string) (*Aweber, error) {
 	var a = new(Aweber)
-	a.baseURL = fmt.Sprintf("https://api.aweber.com/1.0/accounts/%s/", accountID)
+	a.baseURL = fmt.Sprintf("https://api.aweber.com/1.0/accounts/%s", accountID)
 
 	err := a.getOauth2Config()
 	if err != nil {
