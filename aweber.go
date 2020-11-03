@@ -59,15 +59,14 @@ func (a *Aweber) getOauth2Config() error {
 }
 
 func (a *Aweber) getClient() {
-	tokeFile := "token.json"
-	toke, err := tokenFromFile(tokeFile)
+	token, err := tokenFromFile(tokenFile)
 	if err != nil {
-		toke = tokenFromWeb(a.config)
-		saveToken(tokeFile, toke)
+		token = tokenFromWeb(a.config)
+		saveToken(tokenFile, token)
 	}
 
 	config := a.config
-	a.Client = config.Client(context.Background(), toke)
+	a.Client = config.Client(context.Background(), token)
 }
 
 func tokenFromWeb(config *oauth2.Config) *oauth2.Token {

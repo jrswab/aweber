@@ -1,5 +1,7 @@
 package aweber
 
+const tokenFile = ".token.json"
+
 type SubscriberData struct {
 	AdTracking                    string       `json:"ad_tracking"`
 	CustomFields                  CustomFields `json:"custom_fields"`
